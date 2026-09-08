@@ -46,7 +46,7 @@ export function Hero() {
           da coluna direita, que vira pano de fundo da seção. */}
       <div aria-hidden className="absolute inset-0 -z-20 hidden lg:block">
         <Image
-          src="/patricia-hero.png"
+          src="/patricia-hero.webp"
           alt=""
           fill
           loading="eager"
@@ -84,7 +84,7 @@ export function Hero() {
             a medida do texto em 55%. */}
         <div className="relative z-10 h-[42svh] min-h-[280px] w-full lg:hidden">
           <Image
-            src="/patricia-sobre.png"
+            src="/patricia-sobre.webp"
             alt="Patrícia Souza sentada, de blazer claro, sorrindo para a câmera"
             fill
             priority

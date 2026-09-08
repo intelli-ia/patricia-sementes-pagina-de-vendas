@@ -190,7 +190,7 @@ export function Oferta() {
           linha da garantia entre 640 e 767px de viewport. */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-center px-0 md:px-6">
         <Image
-          src="/patricia-oferta.png"
+          src="/patricia-oferta.webp"
           alt="Patrícia em três retratos, de blazer claro, sorrindo e olhando para a câmera"
           width={1450}
           height={999}

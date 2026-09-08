@@ -33,7 +33,7 @@ const PILARES: Pilar[] = [
  * render destruiria e remontaria a cena inteira.
  */
 const ITENS: GalleryItem[] = SEMENTES.map((semente, index) => ({
-  image: `/sementes/${String(index + 1).padStart(2, '0')}.jpg`,
+  image: `/sementes/${String(index + 1).padStart(2, '0')}.webp`,
   text: semente.titulo,
 }));
 

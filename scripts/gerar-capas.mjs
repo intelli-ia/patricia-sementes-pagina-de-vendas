@@ -1,5 +1,5 @@
 /**
- * Gera as capas das 8 Sementes em public/sementes/0X.jpg.
+ * Gera as capas das 8 Sementes em public/sementes/0X.webp.
  *
  * As capas são desenhadas, não fotografadas: cada semente recebe um emblema de
  * traço fino sobre a mesma gramática de luz do resto da página (verde como luz,
@@ -262,8 +262,8 @@ try {
     });
     if (vazou) throw new Error(`a copy da semente ${i + 1} não cabe na capa`);
 
-    const arquivo = resolve(SAIDA, `${String(i + 1).padStart(2, '0')}.jpg`);
-    await pagina.screenshot({ path: arquivo, type: 'jpeg', quality: 92 });
+    const arquivo = resolve(SAIDA, `${String(i + 1).padStart(2, '0')}.webp`);
+    await pagina.screenshot({ path: arquivo, type: 'webp', quality: 92 });
     console.log(`capa ${String(i + 1).padStart(2, '0')} gerada`);
   }
 } finally {

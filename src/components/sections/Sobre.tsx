@@ -38,7 +38,7 @@ export function Sobre() {
                 de altura para cortar. Ancorando no topo, o corte inteiro sai da
                 barra inferior — onde já entra o gradiente e a legenda. */}
             <Image
-              src="/patricia-sobre.png"
+              src="/patricia-sobre.webp"
               alt="Patrícia Souza sentada, de blazer claro, sorrindo para a câmera"
               fill
               sizes="(min-width: 1024px) 40vw, 90vw"
