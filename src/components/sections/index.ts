@@ -1,0 +1,9 @@
+export { CtaFinal } from './CtaFinal';
+export { Depoimentos } from './Depoimentos';
+export { Faq } from './Faq';
+export { Footer } from './Footer';
+export { Hero } from './Hero';
+export { Mecanismo } from './Mecanismo';
+export { Oferta } from './Oferta';
+export { Problema } from './Problema';
+export { Sobre } from './Sobre';

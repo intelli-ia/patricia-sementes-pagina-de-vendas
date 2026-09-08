@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN TOKENS — Chaves da Prosperidade
+   O verde é LUZ, não preenchimento: 90% da tela é preto e branco.
+   Hierarquia de texto por opacidade, nunca cinzas sólidos.
+   ============================================================ */
+:root {
+  /* Cores — hex para leitura humana */
+  --color-background: #0f0f0f;
+  --color-foreground: #ffffff;
+  --color-primary: #90c3a4;
+  --color-primary-dark: #6a9d7d;
+  --color-primary-light: #a8d4b8;
+  --color-primary-deep: #7ab091;
+  --color-accent: #e2e2e2;
+  --color-surface: #1a1c1d;
+  --color-border: rgb(255 255 255 / 0.15);
+
+  /* Canais RGB — consumidos pelo tailwind.config.ts para suportar /opacidade */
+  --color-background-rgb: 15 15 15;
+  --color-foreground-rgb: 255 255 255;
+  --color-primary-rgb: 144 195 164;
+  --color-primary-dark-rgb: 106 157 125;
+  --color-primary-light-rgb: 168 212 184;
+  --color-primary-deep-rgb: 122 176 145;
+  --color-accent-rgb: 226 226 226;
+  --color-surface-rgb: 26 28 29;
+
+  /* Movimento */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-base: 800ms;
+  --duration-sweep: 1000ms;
+}
+
+@layer base {
+  /* A cor de borda padrão vem de theme.borderColor.DEFAULT (preflight do Tailwind). */
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background font-sans text-body font-light text-white/70 antialiased;
+    /* Sem tema claro: a página é dark mode por definição. */
+    color-scheme: dark;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-medium tracking-tight text-white;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-primary-rgb) / 0.3);
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-primary-rgb) / 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-primary-rgb) / 0.45);
+  }
+}
+
+@layer components {
+  /* Container base do projeto */
+  .container-base {
+    @apply mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-12;
+  }
+
+  /* Ritmo vertical padrão entre seções */
+  .section-rhythm {
+    @apply py-12 md:py-20 lg:py-32;
+  }
+
+  /* Mobile-first real: centralizado no mobile, à esquerda no desktop */
+  .align-editorial {
+    @apply text-center md:text-left;
+  }
+}
+
+@layer utilities {
+  /* Máscaras de imagem — nunca borda dura contra o fundo.
+     Fade para baixo no mobile, fade lateral no desktop. */
+  .mask-portrait {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  }
+
+  @media (min-width: 768px) {
+    .mask-portrait {
+      -webkit-mask-image: linear-gradient(to left, #000 0%, #000 55%, transparent 100%);
+      mask-image: linear-gradient(to left, #000 0%, #000 55%, transparent 100%);
+    }
+  }
+
+  .mask-fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  }
+
+  /* Grão de filme. Vive numa camada própria em mix-blend-mode: no fundo escuro
+     o modo é overlay — multiply, usado quando a superfície é clara, só fecharia
+     a seção em preto. */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Brilho que percorre o texto do preço. O branco no meio da rampa é o reflexo
+     atravessando o verde — mesma ideia do <Sweep /> dos botões, aplicada à
+     tipografia via background-clip. */
+  .text-sheen {
+    background-image: linear-gradient(
+      100deg,
+      rgb(var(--color-primary-rgb)) 0%,
+      rgb(var(--color-primary-rgb)) 38%,
+      #ffffff 50%,
+      rgb(var(--color-primary-rgb)) 62%,
+      rgb(var(--color-primary-rgb)) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: text-sheen 7s linear infinite;
+  }
+
+  /* Estado inicial das entradas GSAP — evita flash antes do ScrollTrigger montar */
+  .reveal-init,
+  .reveal-stagger > * {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Alinha um elemento full-bleed à calha esquerda do container base.
+     Permite grids que ocupam 100% da viewport sem desalinhar o texto das
+     demais seções (que vivem dentro do max-w-7xl). */
+  .pl-container-gutter {
+    padding-left: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .pl-container-gutter {
+      padding-left: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pl-container-gutter {
+      padding-left: calc((100vw - min(80rem, 100vw)) / 2 + 3rem);
+    }
+  }
+}
+
+@keyframes text-sheen {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: -200% 50%;
+  }
+}
+
+/* Acessibilidade: zera todas as durações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
