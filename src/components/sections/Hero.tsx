@@ -4,8 +4,9 @@ import { useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { CinematicLight } from '@/components/effects';
-import { Badge, Button } from '@/components/ui';
+import { Badge, ButtonLink } from '@/components/ui';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { OFERTA_ANCHOR } from '@/lib/links';
 
 export function Hero() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -119,7 +120,8 @@ export function Hero() {
             </p>
 
             <div data-hero-item className="reveal-init mt-9 w-full md:w-auto">
-              <Button
+              <ButtonLink
+                href={OFERTA_ANCHOR}
                 size="compact"
                 className="w-full max-w-md whitespace-normal uppercase tracking-wide sm:w-auto sm:max-w-none sm:whitespace-nowrap"
               >
@@ -128,7 +130,7 @@ export function Hero() {
                   className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                   aria-hidden
                 />
-              </Button>
+              </ButtonLink>
             </div>
           </div>
         </div>

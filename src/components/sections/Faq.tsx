@@ -1,6 +1,6 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Accordion, Badge, ButtonLink, Reveal, Section, type AccordionItem } from '@/components/ui';
-import { CHECKOUT_URL, WHATSAPP_URL } from '@/lib/links';
+import { OFERTA_ANCHOR, WHATSAPP_URL } from '@/lib/links';
 
 const PERGUNTAS: AccordionItem[] = [
   {
@@ -93,7 +93,7 @@ export function Faq() {
               </ButtonLink>
 
               <ButtonLink
-                href={CHECKOUT_URL}
+                href={OFERTA_ANCHOR}
                 size="compact"
                 className="w-full whitespace-normal uppercase tracking-wide sm:w-auto sm:whitespace-nowrap"
               >

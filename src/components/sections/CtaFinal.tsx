@@ -1,7 +1,7 @@
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { CinematicLight } from '@/components/effects';
 import { ButtonLink, Reveal, Section } from '@/components/ui';
-import { CHECKOUT_URL } from '@/lib/links';
+import { OFERTA_ANCHOR } from '@/lib/links';
 
 export function CtaFinal() {
   return (
@@ -33,7 +33,7 @@ export function CtaFinal() {
         </h2>
 
         <ButtonLink
-          href={CHECKOUT_URL}
+          href={OFERTA_ANCHOR}
           size="compact"
           className="mt-10 w-full max-w-md whitespace-normal uppercase tracking-wide sm:w-auto sm:max-w-none sm:whitespace-nowrap"
         >
