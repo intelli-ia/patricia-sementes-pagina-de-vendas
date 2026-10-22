@@ -75,7 +75,7 @@ export function Problema() {
         className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:gap-12 lg:grid-cols-3"
       >
         {PROBLEMAS.map(({ icon, titulo, descricao }) => (
-          <div key={titulo} className="flex flex-col items-start gap-4 text-left">
+          <div key={titulo} className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <IconBadge icon={icon} />
             <h3 className="font-display text-h3 font-semibold leading-snug tracking-tight text-white">
               {titulo}

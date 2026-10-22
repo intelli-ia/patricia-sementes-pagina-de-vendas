@@ -21,13 +21,6 @@ export function CtaFinal() {
       />
 
       <Reveal className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        {/* Linha-semente: filete vertical que desce até o título, fechando a
-            metáfora de raiz aberta na dobra 3. */}
-        <span
-          aria-hidden
-          className="mb-10 h-20 w-px bg-gradient-to-b from-transparent via-primary/45 to-primary/70 md:h-28"
-        />
-
         <h2 className="text-balance font-display text-[length:clamp(2rem,4.6vw,4rem)] font-medium leading-[1.1] tracking-tight text-white">
           A próxima história começa com uma <span className="text-primary">escolha</span>.
         </h2>
@@ -46,7 +39,7 @@ export function CtaFinal() {
 
         <p className="mt-6 inline-flex items-center gap-2 font-sans text-xs font-light text-white/45">
           <ShieldCheck className="h-3.5 w-3.5 text-primary/70" strokeWidth={1.75} aria-hidden />
-          Compra segura · 15 dias de garantia
+          Compra segura
         </p>
       </Reveal>
     </Section>

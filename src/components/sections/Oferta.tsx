@@ -1,6 +1,6 @@
 import { ArrowRight, Check, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
-import { Badge, ButtonLink, Reveal } from '@/components/ui';
+import { ButtonLink, Reveal } from '@/components/ui';
 import { CHECKOUT_URL } from '@/lib/links';
 import { OfertaCard } from './OfertaCard';
 
@@ -21,7 +21,8 @@ const PRECO = {
 
 const ENTREGAVEIS: string[] = [
   '1 ano de acesso à comunidade.',
-  '1 encontro ao vivo por mês.',
+  'Encontros ao vivo.',
+  'Aulas interativas.',
   'Desafios semanais de aplicação.',
   'A jornada completa das 8 Sementes da Prosperidade.',
   'Filmes, séries e documentários para ampliar suas referências.',
@@ -75,8 +76,6 @@ export function Oferta() {
         {/* Fica fora do cartão: é a última fala da seção, e o cartão logo abaixo
             é a resposta a ela. */}
         <Reveal className="flex flex-col items-center gap-6 text-center">
-          <Badge>A oferta</Badge>
-
           <h2 className="mx-auto max-w-[720px] text-balance text-center font-display text-[34px] font-medium leading-[1.1] tracking-tight text-white sm:text-[42px] md:text-[56px]">
             Tudo isso por <span className="text-primary">menos do que você imagina</span>.
           </h2>
@@ -162,10 +161,6 @@ export function Oferta() {
                   />
                   Compra segura
                 </span>
-                <span aria-hidden className="text-white/20">
-                  |
-                </span>
-                <span>15 dias de garantia</span>
               </p>
             </div>
           </OfertaCard>
@@ -187,7 +182,7 @@ export function Oferta() {
           O teto de 540px vale para toda a faixa abaixo do md por causa do
           cartão: ali ele ainda usa `pb-48`, e não `pb-[21rem]`. A sobra no pé
           cai de 592px para ~400px, e sem esse teto a foto subiria por cima da
-          linha da garantia entre 640 e 767px de viewport. */}
+          linha "Compra segura" entre 640 e 767px de viewport. */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 flex justify-center px-0 md:px-6">
         <Image
           src="/patricia-oferta.webp"
