@@ -35,7 +35,7 @@ const PERGUNTAS: AccordionItem[] = [
   {
     question: 'E se eu entrar e perceber que a comunidade não é para mim?',
     answer:
-      'Você conta com 15 dias de garantia para conhecer a proposta e solicitar o cancelamento, conforme as condições da compra.',
+      'Você pode desistir da compra em até 7 dias, conforme o Código de Defesa do Consumidor, e solicitar o reembolso integral.',
   },
 ];
 
