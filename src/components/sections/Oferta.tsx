@@ -1,6 +1,6 @@
 import { ArrowRight, Check, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
-import { Badge, ButtonLink, Reveal } from '@/components/ui';
+import { ButtonLink, Reveal } from '@/components/ui';
 import { CHECKOUT_URL } from '@/lib/links';
 import { OfertaCard } from './OfertaCard';
 
@@ -76,8 +76,6 @@ export function Oferta() {
         {/* Fica fora do cartão: é a última fala da seção, e o cartão logo abaixo
             é a resposta a ela. */}
         <Reveal className="flex flex-col items-center gap-6 text-center">
-          <Badge>A oferta</Badge>
-
           <h2 className="mx-auto max-w-[720px] text-balance text-center font-display text-[34px] font-medium leading-[1.1] tracking-tight text-white sm:text-[42px] md:text-[56px]">
             Tudo isso por <span className="text-primary">menos do que você imagina</span>.
           </h2>

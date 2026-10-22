@@ -1,4 +1,4 @@
-import { Badge, Reveal, Section } from '@/components/ui';
+import { Reveal, Section } from '@/components/ui';
 import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import { VIDEOS_DEPOIMENTOS } from '@/lib/links';
 
@@ -13,8 +13,6 @@ export function Depoimentos() {
     // CinematicLight — verde como luz sobre fundo verde não existe.
     <Section id="depoimentos" tone="light">
       <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-        <Badge tone="light">Depoimentos</Badge>
-
         <h2 className="text-balance font-display text-h2 font-medium leading-[1.2] tracking-tight text-background/65">
           Mulheres que já estão construindo{' '}
           <span className="text-background">novos movimentos</span>.

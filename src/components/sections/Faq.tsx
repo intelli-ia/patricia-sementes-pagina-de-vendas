@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
-import { Accordion, Badge, ButtonLink, Reveal, Section, type AccordionItem } from '@/components/ui';
+import { Accordion, ButtonLink, Reveal, Section, type AccordionItem } from '@/components/ui';
 import { OFERTA_ANCHOR, WHATSAPP_URL } from '@/lib/links';
 
 const PERGUNTAS: AccordionItem[] = [
@@ -46,8 +46,7 @@ export function Faq() {
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)] lg:gap-16">
         <Reveal className="align-editorial flex flex-col items-center md:items-start">
           <div className="lg:sticky lg:top-24 flex flex-col items-center md:items-start">
-            <Badge tone="light">Dúvidas</Badge>
-            <h2 className="mt-6 text-balance font-display text-h2 font-medium leading-[1.2] tracking-tight text-background/65">
+            <h2 className="text-balance font-display text-h2 font-medium leading-[1.2] tracking-tight text-background/65">
               Perguntas <span className="text-background">frequentes</span>
             </h2>
           </div>
