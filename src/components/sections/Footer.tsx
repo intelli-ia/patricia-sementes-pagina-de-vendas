@@ -1,10 +1,11 @@
+import Link from 'next/link';
 import { Container } from '@/components/ui';
 
 const ANO = new Date().getFullYear();
 
 /**
- * Rodapé mínimo. TODO: preencher razão social/CNPJ e apontar os links legais
- * para as páginas reais antes de publicar.
+ * Rodapé mínimo. TODO: preencher razão social/CNPJ antes de publicar (os dados
+ * das páginas legais ficam em `lib/legal.ts`).
  */
 export function Footer() {
   return (
@@ -16,18 +17,18 @@ export function Footer() {
         </p>
 
         <nav aria-label="Links legais" className="flex items-center gap-6">
-          <a
-            href="#"
+          <Link
+            href="/termos-de-uso"
             className="font-sans text-xs font-light text-white/40 transition-colors duration-300 hover:text-white/70"
           >
             Termos de uso
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/politica-de-privacidade"
             className="font-sans text-xs font-light text-white/40 transition-colors duration-300 hover:text-white/70"
           >
             Política de privacidade
-          </a>
+          </Link>
         </nav>
       </Container>
     </footer>

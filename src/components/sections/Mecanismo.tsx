@@ -17,17 +17,17 @@ const PILARES: Pilar[] = [
   {
     titulo: 'Reconhecer o que influencia as suas escolhas',
     descricao:
-      'Compreender como a sua história, as crenças que recebeu, os ambientes em que vive e as experiências que acumulou podem participar da maneira como você se posiciona diante da prosperidade.',
+      'Entender como sua história e suas crenças moldam sua relação com a prosperidade.',
   },
   {
     titulo: 'Transformar consciência em movimento',
     descricao:
-      'Deixar de apenas perceber o que precisa mudar e começar a experimentar novas respostas em situações concretas da sua vida.',
+      'Sair da percepção e experimentar novas respostas na vida real.',
   },
   {
     titulo: 'Construir novas referências sobre si mesma',
     descricao:
-      'Cada escolha diferente, cada limite colocado e cada passo realizado pode ajudar você a fortalecer a confiança necessária para continuar avançando.',
+      'Cada novo passo fortalece a confiança para seguir avançando.',
   },
 ];
 
@@ -101,7 +101,7 @@ export function Mecanismo() {
             {PILARES.map((pilar, index) => (
               <li
                 key={pilar.titulo}
-                className="grid grid-cols-1 gap-3 border-b border-background/15 py-8 md:grid-cols-[6rem_1fr] md:gap-10 md:py-10"
+                className="grid grid-cols-1 gap-3 border-b border-background/15 py-8 text-center md:grid-cols-[6rem_1fr] md:gap-10 md:py-10 md:text-left"
               >
                 <span
                   aria-hidden
@@ -114,7 +114,7 @@ export function Mecanismo() {
                   <h3 className="font-display text-h3 font-medium leading-snug tracking-tight text-background">
                     {pilar.titulo}
                   </h3>
-                  <p className="mt-3 max-w-2xl font-sans text-body font-light leading-relaxed text-background/70">
+                  <p className="mx-auto mt-3 max-w-2xl font-sans md:mx-0 text-body font-light leading-relaxed text-background/70">
                     {pilar.descricao}
                   </p>
                 </div>

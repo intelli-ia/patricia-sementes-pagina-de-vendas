@@ -3,9 +3,8 @@ import { CinematicLight } from '@/components/effects';
 import { Reveal, Section } from '@/components/ui';
 
 const PARAGRAFOS: string[] = [
-  'Patrícia é psicoterapeuta e atua com mulheres em consultório, palestras e treinamentos. Ao acompanhar de perto diferentes histórias, percebeu que muitas dificuldades de realização não estão ligadas apenas à falta de conhecimento ou capacidade. Muitas vezes, padrões emocionais, experiências, crenças e a forma como cada mulher aprendeu a enxergar a si mesma continuam influenciando suas escolhas.',
-  'Foi a partir desse olhar que nasceu a Comunidade Sementes da Prosperidade. Uma experiência criada para ajudar mulheres a compreender o que existe por trás de alguns dos seus bloqueios, ampliar suas referências e transformar essa consciência em novas formas de pensar, escolher e agir.',
-  'Na comunidade, Patrícia reúne reflexão, aplicação e troca para que cada participante possa olhar para a própria história com mais clareza e começar a construir uma prosperidade coerente com a vida que deseja viver e com o legado que deseja deixar.',
+  'Patrícia é psicoterapeuta e atua com mulheres em consultório, palestras e treinamentos. Ao acompanhar de perto diferentes histórias, percebeu que muitas dificuldades de realização não estão ligadas apenas à falta de conhecimento, mas a padrões emocionais, crenças e à forma como cada mulher aprendeu a enxergar a si mesma.',
+  'Foi desse olhar que nasceu a Comunidade Sementes da Prosperidade: um espaço de reflexão, aplicação e troca para que cada participante compreenda seus bloqueios, amplie suas referências e construa uma prosperidade coerente com a vida que deseja viver e com o legado que deseja deixar.',
 ];
 
 export function Sobre() {
@@ -20,7 +19,7 @@ export function Sobre() {
       />
 
       {/* Título, retrato e texto em uma única coluna centralizada. */}
-      <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+      <div className="mx-auto flex max-w-3xl flex-col items-center text-center lg:max-w-4xl">
         <Reveal delay={0.1}>
           <h2 className="text-balance font-display text-[length:clamp(1.75rem,3vw,2.75rem)] font-medium leading-[1.15] tracking-tight text-white">
             Quem conduz a Comunidade <span className="text-primary">Sementes da Prosperidade</span>
@@ -71,7 +70,7 @@ export function Sobre() {
           {PARAGRAFOS.map((paragrafo) => (
             <p
               key={paragrafo.slice(0, 40)}
-              className="font-sans text-body font-light leading-relaxed text-white/70"
+              className="font-sans text-body font-light leading-relaxed text-white/70 lg:text-xl"
             >
               {paragrafo}
             </p>
