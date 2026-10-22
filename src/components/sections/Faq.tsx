@@ -11,7 +11,7 @@ const PERGUNTAS: AccordionItem[] = [
   {
     question: 'Preciso ter muito tempo disponível para participar?',
     answer:
-      'Não. Existe um encontro ao vivo por mês e desafios semanais pensados para serem levados à vida real. Você não precisa esperar um período perfeito ou concluir toda a metodologia para começar.',
+      'Não. Existem encontros ao vivo, aulas interativas e desafios semanais pensados para serem levados à vida real. Você não precisa esperar um período perfeito ou concluir toda a metodologia para começar.',
   },
   {
     question: 'Como funcionam os encontros e os desafios?',

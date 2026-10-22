@@ -13,6 +13,16 @@ export const OFERTA_ANCHOR = '#oferta';
 /** URL do checkout. TODO: substituir pela URL real da plataforma de pagamento. */
 export const CHECKOUT_URL = OFERTA_ANCHOR;
 
+/** Vídeo da seção "A experiência" (bucket). Vazio exibe o placeholder. */
+export const VIDEO_EXPERIENCIA_URL =
+  'https://qfqgnlgfhnqlzgybglel.supabase.co/storage/v1/object/public/files/chaves-da-prosperidade.mp4';
+
+/** Vídeos de depoimento (bucket), em quadro 1:1. */
+export const VIDEOS_DEPOIMENTOS = [
+  'https://qfqgnlgfhnqlzgybglel.supabase.co/storage/v1/object/public/files/patricia-depoimento01.mp4',
+  'https://qfqgnlgfhnqlzgybglel.supabase.co/storage/v1/object/public/files/patricia-depoimento02.mp4',
+];
+
 /** Atendimento no WhatsApp. TODO: substituir pelo número real (formato 55DDDNÚMERO). */
 export const WHATSAPP_URL =
   'https://wa.me/5500000000000?text=' +

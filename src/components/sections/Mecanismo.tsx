@@ -1,6 +1,10 @@
+import { Play } from 'lucide-react';
 import { CinematicLight } from '@/components/effects';
 import { Badge, Container, Reveal, Section } from '@/components/ui';
+import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
+import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import { type GalleryItem } from '@/components/ui/circular-gallery-2';
+import { VIDEO_EXPERIENCIA_URL } from '@/lib/links';
 import { SEMENTES } from '@/lib/sementes';
 import { SementesGallery } from './SementesGallery';
 
@@ -61,18 +65,24 @@ export function Mecanismo() {
               <span className="text-background">raízes</span> que sustentam as suas escolhas.
             </h2>
 
-            <p className="max-w-2xl font-sans text-body font-light leading-relaxed text-background/70">
-              Você não precisa de mais uma promessa de mudança rápida. Precisa compreender o que
-              influencia as suas escolhas e encontrar um espaço que ajude esse entendimento a se
-              transformar em novas atitudes.
-            </p>
-
-            <p className="max-w-2xl font-sans text-body font-light leading-relaxed text-background/70">
-              Na Comunidade Sementes da Prosperidade, o desenvolvimento não é tratado como uma
-              coleção de ideias bonitas sobre uma vida melhor. A experiência foi criada para ajudar
-              você a olhar para a própria história, reconhecer padrões, ampliar suas referências e
-              experimentar, na vida real, formas diferentes de pensar, escolher e agir.
-            </p>
+            <div className="mt-2 aspect-[9/16] w-full max-w-[min(22rem,calc(80svh*9/16))] overflow-hidden rounded-2xl bg-background shadow-2xl">
+              {VIDEO_EXPERIENCIA_URL ? (
+                <VideoPlayer
+                  src={VIDEO_EXPERIENCIA_URL}
+                  label="Assista"
+                  className="h-full w-full"
+                />
+              ) : (
+                <div className="relative h-full w-full">
+                  <ImagePlaceholder label="Vídeo da experiência" />
+                  <Play
+                    className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-[calc(50%+2.25rem)] text-white/60"
+                    strokeWidth={1.25}
+                    aria-hidden
+                  />
+                </div>
+              )}
+            </div>
           </Reveal>
 
           {/* ── Os três movimentos ───────────────────────────────────── */}

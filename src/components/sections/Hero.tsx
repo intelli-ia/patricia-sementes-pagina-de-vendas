@@ -119,6 +119,14 @@ export function Hero() {
               gerações.
             </p>
 
+            <div
+              data-hero-item
+              className="reveal-init mt-6 flex flex-wrap justify-center gap-3 md:justify-start"
+            >
+              <Badge dot={false}>Encontros ao vivo</Badge>
+              <Badge dot={false}>Aulas interativas</Badge>
+            </div>
+
             <div data-hero-item className="reveal-init mt-9 w-full md:w-auto">
               <ButtonLink
                 href={OFERTA_ANCHOR}
